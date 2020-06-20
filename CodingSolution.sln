@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q34_PathInTree", "Q34_PathI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q33_SquenceOfBST", "Q33_SquenceOfBST\Q33_SquenceOfBST.csproj", "{27D118CA-43C6-4646-A498-C5A9D4733C5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q54_KthNodeInBST", "Q54_KthNodeInBST\Q54_KthNodeInBST.csproj", "{31DCD8FB-56EA-4BB5-BC96-AEDDE6D91FB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{27D118CA-43C6-4646-A498-C5A9D4733C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27D118CA-43C6-4646-A498-C5A9D4733C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27D118CA-43C6-4646-A498-C5A9D4733C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31DCD8FB-56EA-4BB5-BC96-AEDDE6D91FB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31DCD8FB-56EA-4BB5-BC96-AEDDE6D91FB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31DCD8FB-56EA-4BB5-BC96-AEDDE6D91FB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31DCD8FB-56EA-4BB5-BC96-AEDDE6D91FB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
