@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29009.5
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q66_ConstuctMultiplyArray", "Q66_ConstuctMultiplyArray\Q66_ConstuctMultiplyArray.csproj", "{9E0F2111-96F9-47FB-909E-A8416470C851}"
 EndProject
@@ -53,6 +53,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q54_KthNodeInBST", "Q54_KthNodeInBST\Q54_KthNodeInBST.csproj", "{31DCD8FB-56EA-4BB5-BC96-AEDDE6D91FB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q26_SubstructureInTree", "Q26_SubstructureInTree\Q26_SubstructureInTree.csproj", "{87D991CA-F7C1-432D-9BFE-A412CA30A112}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q32_01_PrintTreeFromTopToBottom", "Q32_01_PrintTreeFromTopToBottom\Q32_01_PrintTreeFromTopToBottom.csproj", "{B5A9D720-E5E5-4EE3-8384-EA20482D935E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -152,6 +154,10 @@ Global
 		{87D991CA-F7C1-432D-9BFE-A412CA30A112}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87D991CA-F7C1-432D-9BFE-A412CA30A112}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87D991CA-F7C1-432D-9BFE-A412CA30A112}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A9D720-E5E5-4EE3-8384-EA20482D935E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A9D720-E5E5-4EE3-8384-EA20482D935E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A9D720-E5E5-4EE3-8384-EA20482D935E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A9D720-E5E5-4EE3-8384-EA20482D935E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
