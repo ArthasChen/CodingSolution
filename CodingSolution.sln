@@ -60,6 +60,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q07_ConstructBinaryTree", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q32_03_PrintTreesInZigzag", "Q32_03_PrintTreesInZigzag\Q32_03_PrintTreesInZigzag.csproj", "{3EA163A0-1CE9-403A-8D3B-96EE28D271B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q37_SerializeBinaryTrees", "Q37_SerializeBinaryTrees\Q37_SerializeBinaryTrees.csproj", "{C45F678D-38F2-4FD5-A9BC-BAEC5A09F7B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,6 +172,10 @@ Global
 		{3EA163A0-1CE9-403A-8D3B-96EE28D271B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EA163A0-1CE9-403A-8D3B-96EE28D271B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EA163A0-1CE9-403A-8D3B-96EE28D271B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45F678D-38F2-4FD5-A9BC-BAEC5A09F7B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45F678D-38F2-4FD5-A9BC-BAEC5A09F7B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45F678D-38F2-4FD5-A9BC-BAEC5A09F7B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45F678D-38F2-4FD5-A9BC-BAEC5A09F7B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
