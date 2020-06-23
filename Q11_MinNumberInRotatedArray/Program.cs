@@ -10,10 +10,10 @@ namespace Q11_MinNumberInRotatedArray
     {
         static void Main(string[] args)
         {
-            int[] intArray = { 1, 2, 3, 4, 5, 6 };
+            int[] intArray = { 1,1,1 };
 
             Solution s = new Solution();
-            var aaa = s.minNumberInRotateArray(intArray);
+            var aaa = s.MinArray(intArray);
 
             Console.ReadKey();
         }
@@ -30,28 +30,23 @@ namespace Q11_MinNumberInRotatedArray
         /// </summary>
         /// <param name="rotateArray"></param>
         /// <returns></returns>
-        public int minNumberInRotateArray(int[] rotateArray)
+        public int MinArray(int[] rotateArray)
         {
-            // write code here
-            // 1 2 2 3 4 5 6
-
-            // 1 2 2 3 4 5 6 拿了0个元素旋转
-            // 2 3 4 5 6 1 2 从重复元素旋转
-
-            // 3 4 5 6 1 2
-            // 5 6 1 2 3 4
-
-
-            // 0 1 2 3 4 5
             if (rotateArray.Length <= 0)
             {
                 return 0;
+            }
+
+            if (rotateArray.Length == 1)
+            {
+                return rotateArray[0];
             }
 
             int minNumber = 0;
 
             int leftIndex = 0;
             int rightIndex = rotateArray.Length - 1;
+            // 这么赋值是考虑到0个元素旋转，这样其实数组没有变化，此时数组头元素必然比最后一个大。其余情况都是头元素大于等于最后元素，等于的情况是重复数字截断旋转。
             int midIndex = leftIndex;
 
             while (rotateArray[leftIndex] >= rotateArray[rightIndex])
@@ -62,8 +57,23 @@ namespace Q11_MinNumberInRotatedArray
                     break;
                 }
 
+                // 因为刚开始minIndex赋值为0，而进了这个循环体意味着排出了minIndex是0的情况，因此立刻给minIndex赋值为left和right的中点
+                midIndex = leftIndex + (rightIndex - leftIndex) / 2;
+
+                if (rotateArray[leftIndex] == rotateArray[midIndex] && rotateArray[rightIndex] == rotateArray[midIndex])
+                {
+                    int newArrayLength = rightIndex - leftIndex + 1;
+                    int[] newArray = new int[newArrayLength];
+                    for (int i = 0; i < newArrayLength; i++)
+                    {
+                        newArray[i] = rotateArray[i + leftIndex];
+                    }
+                    // 老老实实顺序查找吧
+                    midIndex = GetMinNumber(newArray);
+                    break;
+                }
                 // left < mid 证明旋转的子数组在mid右边
-                if (rotateArray[leftIndex] < rotateArray[midIndex])
+                else if (rotateArray[leftIndex] < rotateArray[midIndex])
                 {
                     leftIndex = midIndex;
                     midIndex = leftIndex + (rightIndex - leftIndex) / 2;
@@ -84,41 +94,25 @@ namespace Q11_MinNumberInRotatedArray
 
             minNumber = rotateArray[midIndex];
 
-
-
-            /*
-            int minNumber = 0;
-
-            int leftIndex = 0;
-            int rightIndex = rotateArray.Length - 1;
-            // 这里把midindex改为0 检查 旋转数组从头拿了0个元素到末尾
-            int midIndex = leftIndex + (rightIndex - leftIndex) / 2;
-            //int midIndex = 0;
-
-            while (midIndex != leftIndex && midIndex != rightIndex)
-            {
-                if (rotateArray[midIndex] > rotateArray[leftIndex])
-                {
-                    leftIndex = midIndex;
-                    midIndex = leftIndex + (rightIndex - leftIndex) / 2;
-                }
-                else
-                {
-                    rightIndex = midIndex;
-                    midIndex = leftIndex + (rightIndex - leftIndex) / 2;
-                }
-            }
-
-            if (rotateArray[leftIndex] > rotateArray[rightIndex])
-            {
-                minNumber = rotateArray[rightIndex];
-            }
-            else
-            {
-                minNumber = rotateArray[leftIndex];
-            }*/
-
             return minNumber;
+        }
+
+        private int GetMinNumber(int[] intArray)
+        {
+            if (intArray.Length <= 0)
+            {
+                return -1;
+            }
+            int minIndex = 0;
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                if (intArray[i] < intArray[minIndex])
+                {
+                    minIndex = i;
+                }
+            }
+
+            return minIndex;
         }
     }
 }
