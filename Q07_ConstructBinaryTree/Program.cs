@@ -14,7 +14,7 @@ namespace Q07_ConstructBinaryTree
             int[] tin = { 4, 2, 5, 1, 6, 3, 7 };
 
             Solution s = new Solution();
-            TreeNode tree = s.reConstructBinaryTree(pre, tin);
+            TreeNode tree = s.BuildTree(pre, tin);
             Console.ReadKey();
         }
     }
@@ -32,21 +32,21 @@ namespace Q07_ConstructBinaryTree
 
     class Solution
     {
-        public TreeNode reConstructBinaryTree(int[] pre, int[] tin)
+        public TreeNode BuildTree(int[] preorder, int[] inorder)
         {
             // write code here
             TreeNode resultTreeNode = null;
 
-            if (pre.Length == 0 || tin.Length == 0)
+            if (preorder.Length == 0 || inorder.Length == 0)
             {
                 return resultTreeNode;
             }
 
-            int rootValue = pre[0];
+            int rootValue = preorder[0];
 
             // 根据前序遍历数组中第一个值，从中序遍历数组中区分出左树和右树的中序遍历
             int leftSubTreeArrayCount = 0;
-            foreach (var child in tin)
+            foreach (var child in inorder)
             {
                 if (child == rootValue)
                 {
@@ -56,20 +56,20 @@ namespace Q07_ConstructBinaryTree
                 leftSubTreeArrayCount++;
             }
 
-            int rightTreeArrayCount = tin.Length - 1 - leftSubTreeArrayCount;
+            int rightTreeArrayCount = inorder.Length - 1 - leftSubTreeArrayCount;
 
             int[] leftInOrderArray = new int[leftSubTreeArrayCount];
             int[] rightInOrderArray = new int[rightTreeArrayCount];
 
-            for (int i = 0; i < tin.Length; i++)
+            for (int i = 0; i < inorder.Length; i++)
             {
                 if (i < leftSubTreeArrayCount)
                 {
-                    leftInOrderArray[i] = tin[i];
+                    leftInOrderArray[i] = inorder[i];
                 }
                 else if (i > leftSubTreeArrayCount)
                 {
-                    rightInOrderArray[i - 1 - leftSubTreeArrayCount] = tin[i];
+                    rightInOrderArray[i - 1 - leftSubTreeArrayCount] = inorder[i];
                 }
                 else
                 {
@@ -81,20 +81,20 @@ namespace Q07_ConstructBinaryTree
             int[] leftPreOrderArray = new int[leftSubTreeArrayCount];
             int[] rightPreOrderArray = new int[rightTreeArrayCount];
 
-            for (int i = 0; i < pre.Length; i++)
+            for (int i = 0; i < preorder.Length; i++)
             {
                 if (i > 0 && i < 1 + leftSubTreeArrayCount)
                 {
-                    leftPreOrderArray[i - 1] = pre[i];
+                    leftPreOrderArray[i - 1] = preorder[i];
                 }
                 else if (i >= 1 + leftSubTreeArrayCount)
                 {
-                    rightPreOrderArray[i - 1 - leftSubTreeArrayCount] = pre[i];
+                    rightPreOrderArray[i - 1 - leftSubTreeArrayCount] = preorder[i];
                 }
             }
 
-            TreeNode leftSubTree = reConstructBinaryTree(leftPreOrderArray, leftInOrderArray);
-            TreeNode rightSubTree = reConstructBinaryTree(rightPreOrderArray, rightInOrderArray);
+            TreeNode leftSubTree = BuildTree(leftPreOrderArray, leftInOrderArray);
+            TreeNode rightSubTree = BuildTree(rightPreOrderArray, rightInOrderArray);
 
             resultTreeNode = new TreeNode(rootValue);
             resultTreeNode.left = leftSubTree;

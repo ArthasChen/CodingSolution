@@ -26,7 +26,7 @@ namespace Q32_03_PrintTreesInZigzag
             node3.left = node6;
             node3.right = node7;
 
-            Solution hh = new Solution();
+            SolutionNK hh = new SolutionNK();
             var result = hh.Print(node1);
 
 
@@ -46,7 +46,78 @@ namespace Q32_03_PrintTreesInZigzag
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public IList<IList<int>> LevelOrder(TreeNode root)
+        {
+            // write code here
+            // 先按分层打印来存储，然后 在遍历过程中，定义一个变量来表示这一行是正写入还是反着写入
+
+            List<IList<int>> resultList = new List<IList<int>>();
+            if (root == null)
+            {
+                return resultList;
+            }
+
+            int currentLevelLeftCount = 1;
+            int NextLevelCount = 0;
+            int printLeftOrRight = 1;//1 left to right; -1 right to left
+            Queue<TreeNode> quede = new Queue<TreeNode>();
+            List<int> levelList = new List<int>();
+            Stack<int> stack = new Stack<int>();
+
+            quede.Enqueue(root);
+
+            while (quede.Count != 0)
+            {
+                TreeNode cur = quede.Dequeue();
+
+                if (printLeftOrRight == 1)
+                {
+                    levelList.Add(cur.val);
+                    currentLevelLeftCount--;
+                }
+                else if (printLeftOrRight == -1)
+                {
+                    stack.Push(cur.val);
+                    currentLevelLeftCount--;
+                }
+
+
+                if (cur.left != null)
+                {
+                    quede.Enqueue(cur.left);
+                    NextLevelCount++;
+                }
+
+                if (cur.right != null)
+                {
+                    quede.Enqueue(cur.right);
+                    NextLevelCount++;
+                }
+
+                if (currentLevelLeftCount == 0)
+                {
+                    if (printLeftOrRight == -1)
+                    {
+                        while (stack.Count != 0)
+                        {
+                            levelList.Add(stack.Pop());
+                        }
+                    }
+                    resultList.Add(levelList);
+                    levelList = new List<int>();
+                    currentLevelLeftCount = NextLevelCount;
+                    NextLevelCount = 0;
+                    printLeftOrRight *= -1;
+                }
+            }
+
+            return resultList;
+        }
+    }
+
+    class SolutionNK
     {
 
         public List<List<int>> Print(TreeNode pRoot)

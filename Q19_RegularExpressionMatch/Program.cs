@@ -10,13 +10,23 @@ namespace Q19_RegularExpressionMatch
     {
         static void Main(string[] args)
         {
-            Solution s = new Solution();
+            SolutionNK s = new SolutionNK();
             Console.WriteLine(s.match("".ToCharArray(), ".*".ToCharArray()).ToString());
             Console.ReadKey();
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public bool IsMatch(string s, string p)
+        {
+            SolutionNK snk = new SolutionNK();
+
+            return snk.match(s.ToCharArray(), p.ToCharArray());
+        }
+    }
+
+    class SolutionNK
     {
         public bool match(char[] str, char[] pattern)
         {
@@ -48,7 +58,7 @@ namespace Q19_RegularExpressionMatch
 
             if ((patternIndex + 1 < pattern.Length) && pattern[patternIndex + 1] == '*')
             {
-                if (strIndex>=str.Length)
+                if (strIndex >= str.Length)
                 {
                     return matchCore(str, strIndex, pattern, patternIndex + 2);
                 }

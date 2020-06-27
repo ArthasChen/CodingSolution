@@ -25,7 +25,7 @@ namespace Q25_MergeSortedLists
             node4.next = node6;
             node6.next = null;
 
-            Solution s = new Solution();
+            SolutionNK s = new SolutionNK();
             var list = s.Merge(node1, node2);
 
             while (list != null)
@@ -50,7 +50,38 @@ namespace Q25_MergeSortedLists
             val = x;
         }
     }
-    class Solution
+
+    public class Solution
+    {
+        public ListNode MergeTwoLists(ListNode l1, ListNode l2)
+        {
+            if (l1 == null)
+            {
+                return l2;
+            }
+            if (l2 == null)
+            {
+                return l1;
+            }
+
+            ListNode MergedHeadNode = null;
+
+            if (l1.val < l2.val)
+            {
+                MergedHeadNode = l1;
+                MergedHeadNode.next = MergeTwoLists(l1.next, l2);
+            }
+            else
+            {
+                MergedHeadNode = l2;
+                MergedHeadNode.next = MergeTwoLists(l2.next, l1);
+            }
+
+            return MergedHeadNode;
+        }
+    }
+
+    class SolutionNK
     {
         public ListNode Merge(ListNode pHead1, ListNode pHead2)
         {

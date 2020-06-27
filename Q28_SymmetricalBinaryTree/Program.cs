@@ -46,7 +46,7 @@ namespace Q28_SymmetricalBinaryTree
             //node4.left = node8;
             //node7.left = node10;
 
-            Solution hh = new Solution();
+            SolutionNK hh = new SolutionNK();
             var s = hh.isSymmetrical(node1);
 
             Console.ReadKey();
@@ -64,7 +64,16 @@ namespace Q28_SymmetricalBinaryTree
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public bool IsSymmetric(TreeNode root)
+        {
+            SolutionNK snk =new SolutionNK();
+            return snk.isSymmetrical(root);
+        }
+    }
+
+    class SolutionNK
     {
         Queue<string> treeValue = new Queue<string>();
         public bool isSymmetrical(TreeNode pRoot)

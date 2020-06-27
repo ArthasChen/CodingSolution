@@ -25,7 +25,7 @@ namespace Q27_MirrorOfBinaryTree
             node3.left = node6;
 
 
-            Solution s1=new Solution();
+            SolutionNK s1=new SolutionNK();
             s1.BeforeTraversal(node1);
 
             s1.Mirror(node1);
@@ -46,7 +46,16 @@ namespace Q27_MirrorOfBinaryTree
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public TreeNode MirrorTree(TreeNode root)
+        {
+            SolutionNK snk =new SolutionNK();
+            return snk.Mirror(root);
+        }
+    }
+
+    class SolutionNK
     {
         public TreeNode Mirror(TreeNode root)
         {

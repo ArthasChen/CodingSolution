@@ -10,18 +10,30 @@ namespace Q20_NumericStrings
     {
         static void Main(string[] args)
         {
-            Solution s = new Solution();
-            string inputString = "12e";
+            SolutionNK s = new SolutionNK();
+            string inputString = "1";
 
             char[] str = inputString.ToCharArray();
             bool result = s.isNumeric(str);
 
             Console.WriteLine(result.ToString());
+            Solution ss=new Solution();
+            var r= ss.IsNumber("1");
             Console.ReadKey();
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public bool IsNumber(string s)
+        {
+            string checkedInput = s.Trim();
+            SolutionNK snk = new SolutionNK();
+            return snk.isNumeric(checkedInput.ToCharArray());
+        }
+    }
+
+    class SolutionNK
     {
         // index of char array
         int index = 0;

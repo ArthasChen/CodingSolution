@@ -34,6 +34,86 @@ namespace Q36_ConvertBinarySearchTree
         }
     }
 
+
+    // Definition for a Node.
+    public class Node
+    {
+        public int val;
+        public Node left;
+        public Node right;
+
+        public Node() { }
+        public Node(int _val, Node _left, Node _right)
+        {
+            val = _val;
+            left = _left;
+            right = _right;
+        }
+    }
+
+    public class Solution
+    {
+        public Node TreeToDoublyList(Node root)
+        {
+            if (root == null)
+            {
+                return null;
+            }
+
+            return BinaryConverToList(root).headNode;
+        }
+
+        public ReturnTy BinaryConverToList(Node root)
+        {
+            if (root == null)
+            {
+                //return null;
+                return new ReturnTy(null, null);
+            }
+
+            ReturnTy leftReturn = BinaryConverToList(root.left);
+            ReturnTy rightReturn = BinaryConverToList(root.right);
+
+            if (leftReturn.tailNode != null)
+            {
+                root.left = leftReturn.tailNode;
+
+                leftReturn.tailNode.right = root;
+            }
+            else
+            {
+                leftReturn.headNode = root;
+            }
+
+            if (rightReturn.headNode != null)
+            {
+                root.right = rightReturn.headNode;
+
+
+                rightReturn.headNode.left = root;
+            }
+            else
+            {
+                rightReturn.tailNode = root;
+            }
+
+            return new ReturnTy(leftReturn.headNode, rightReturn.tailNode);
+        }
+    }
+
+    public class ReturnTy
+    {
+        public Node headNode;
+        public Node tailNode;
+
+        public ReturnTy(Node start, Node end)
+        {
+            headNode = start;
+            tailNode = end;
+        }
+    }
+
+
     public class TreeNode
     {
         public int val;
@@ -50,7 +130,7 @@ namespace Q36_ConvertBinarySearchTree
     /// 时间复杂度：O(n)
     /// 额外空间复杂度:O(n)，因为需要借助额外的队列
     /// </summary>
-    class Solution
+    class Solution1
     {
         private Queue<TreeNode> treeQueue = new Queue<TreeNode>();
 

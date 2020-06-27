@@ -21,7 +21,44 @@ namespace Multiply
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public int[] ConstructArr(int[] a)
+        {
+            // write code here
+            // creat return array depend on input A array
+            int length = a.Length;
+            int[] BArray = new int[length];
+            int[] BLeftArray = new int[length];
+
+            if (length == 0)
+            {
+                return new int[]{};
+            }
+
+            BArray[0] = 1;
+
+            for (int i = 1; i < length; i++)
+            {
+                BArray[i] = BArray[i - 1] * a[i - 1];
+            }
+
+            BLeftArray[length - 1] = 1;
+            for (int i = length - 2; i >= 0; i--)
+            {
+                BLeftArray[i] = BLeftArray[i + 1] * a[i + 1];
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                BArray[i] *= BLeftArray[i];
+            }
+
+            return BArray;
+        }
+    }
+
+    class Solution1
     {
         public int[] multiply(int[] A)
         {

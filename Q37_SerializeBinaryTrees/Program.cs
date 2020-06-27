@@ -25,7 +25,7 @@ namespace Q37_SerializeBinaryTrees
 
             string inputString = "1!2!4!#!#!#!3!#!7!#!#!";
 
-            Solution s = new Solution();
+            SolutionNK s = new SolutionNK();
             var head = s.Serialize(node1);
 
             Console.ReadKey();
@@ -56,7 +56,114 @@ namespace Q37_SerializeBinaryTrees
         }
     }
 
-    class Solution
+    public class Codec
+    {
+        StringBuilder sb = new StringBuilder();
+        // Encodes a tree to a single string.
+        public string serialize(TreeNode root)
+        {
+            // write code here
+            if (root == null)
+            {
+                return "#!";
+            }
+
+            PreOrderTraversalWithRecursive(root);
+
+
+            return sb.ToString();
+        }
+
+        public void PreOrderTraversalWithRecursive(TreeNode root)
+        {
+            if (root == null)
+            {
+                sb.Append("#!");
+                return;
+            }
+
+            sb.Append(root.val);
+            sb.Append("!");
+            //Console.WriteLine(root.val.ToString() + "  ");
+            PreOrderTraversalWithRecursive(root.left);
+            PreOrderTraversalWithRecursive(root.right);
+        }
+
+        // Decodes your encoded data to tree.
+        public TreeNode deserialize(string data)
+        {
+            string[] inputCharArray = data.Split(new char[1] { '!' }, StringSplitOptions.RemoveEmptyEntries);
+
+            ReturnType resultTreeNode = null;
+
+            //str.
+            return DeserializeRecursive(inputCharArray).treeNode;
+        }
+
+        public ReturnType DeserializeRecursive(string[] strArray)
+        {
+            if (strArray == null)
+            {
+                return new ReturnType(null, null);
+            }
+
+
+            ReturnType rt = null;
+            string rootStr = strArray[0];
+            if (rootStr != "#")
+            {
+                int newStrArrayLength = strArray.Length - 1;
+
+                if (newStrArrayLength > 0)
+                {
+                    string[] newStrArray = new string[strArray.Length - 1];
+                    for (int i = 1; i < strArray.Length; i++)
+                    {
+                        newStrArray[i - 1] = strArray[i];
+                    }
+                    //strArray.CopyTo(newStrArray, 0);
+
+                    ReturnType leftRT = DeserializeRecursive(newStrArray);
+                    ReturnType rightRT = DeserializeRecursive(leftRT.strArray);
+
+                    TreeNode curTreeNode = new TreeNode(int.Parse(rootStr));
+                    curTreeNode.left = leftRT.treeNode;
+                    curTreeNode.right = rightRT.treeNode;
+                    rt = new ReturnType(curTreeNode, rightRT.strArray);
+                }
+                else
+                {
+                    TreeNode curTreeNode = new TreeNode(int.Parse(rootStr));
+                    rt = new ReturnType(curTreeNode, null);
+                }
+            }
+            else
+            {
+                int newStrArrayLength = strArray.Length - 1;
+
+                if (newStrArrayLength > 0)
+                {
+                    string[] newStrArray = new string[strArray.Length - 1];
+                    for (int i = 1; i < strArray.Length; i++)
+                    {
+                        newStrArray[i - 1] = strArray[i];
+                    }
+                    //strArray.CopyTo(newStrArray, 1);
+                    rt = new ReturnType(null, newStrArray);
+                }
+                else
+                {
+                    rt = new ReturnType(null, null);
+                }
+            }
+
+
+            return rt;
+        }
+    }
+
+
+    class SolutionNK
     {
         StringBuilder sb = new StringBuilder();
         public string Serialize(TreeNode root)

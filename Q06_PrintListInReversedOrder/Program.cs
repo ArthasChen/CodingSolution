@@ -46,12 +46,71 @@ namespace Q06_PrintListInReversedOrder
             val = x;
         }
     }
-    class Solution
+    class Solution2
     {
         // 返回从尾到头的列表值序列
         public List<int> printListFromTailToHead(ListNode listNode)
         {
             return Method2(listNode);
+        }
+
+        // 用stack来实现
+        public List<int> Method1(ListNode listNode)
+        {
+            // write code here
+            List<int> listResult = new List<int>();
+            ListNode node = listNode;
+
+            Stack<ListNode> stack = new Stack<ListNode>();
+            while (node != null)
+            {
+                stack.Push(node);
+                node = node.next;
+            }
+
+            while (stack.Count > 0)
+            {
+                ListNode temNode = stack.Pop();
+                listResult.Add(temNode.val);
+            }
+
+            return listResult;
+        }
+
+        // 用数组，反向读写
+        public List<int> Method2(ListNode listNode)
+        {
+            // write code here
+            List<int> listResult = new List<int>();
+            List<int> listResult2 = new List<int>();
+
+            ListNode node = listNode;
+
+
+
+            while (node != null)
+            {
+                listResult.Add(node.val);
+                node = node.next;
+            }
+
+            for (int i = listResult.Count - 1; i > -1; i--)
+            {
+                listResult2.Add(listResult[i]);
+            }
+
+            return listResult2;
+        }
+    }
+
+    public class Solution
+    {
+        public int[] ReversePrint(ListNode head)
+        {
+            List<int> re = Method2(head);
+            int[] result = new int[re.Count];
+            re.CopyTo(result, 0);
+            return result;
         }
 
         // 用stack来实现

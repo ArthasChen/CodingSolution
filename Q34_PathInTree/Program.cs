@@ -44,7 +44,7 @@ namespace Q34_PathInTree
             node3.left = node6;
             node3.right = node7;
 
-            Solution s = new Solution();
+            SolutionNK s = new SolutionNK();
             var result = s.FindPath(node1, 8);
 
             Console.ReadKey();
@@ -62,7 +62,59 @@ namespace Q34_PathInTree
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public IList<IList<int>> PathSum(TreeNode root, int sum)
+        {
+            List<IList<int>> returnList = new List<IList<int>>();
+            List<int> twoSideQueue = new List<int>();
+
+            FindPath(root, sum, 0, returnList, twoSideQueue);
+
+            return returnList;
+        }
+
+        public void FindPath(TreeNode root, int targetNumber, int currentNumber, List<IList<int>> list, List<int> twoSideQueue)
+        {
+            if (root == null)
+            {
+                return;
+            }
+
+            currentNumber += root.val;
+            // add elemtn to tail
+            twoSideQueue.Add(root.val);
+
+
+            if (root.left == null && root.right == null && currentNumber == targetNumber)
+            {
+                // 满足条件，构建路径List 
+                List<int> temList = new List<int>();
+                foreach (var child in twoSideQueue)
+                {
+                    temList.Add(child);
+                }
+
+                // 将本次符合条件的Path 的List写入返回类型的变量中
+                list.Add(temList);
+            }
+
+            if (root.left != null)
+            {
+                FindPath(root.left, targetNumber, currentNumber, list, twoSideQueue);
+            }
+
+            if (root.right != null)
+            {
+                FindPath(root.right, targetNumber, currentNumber, list, twoSideQueue);
+            }
+
+            // 删除队列尾部的值
+            twoSideQueue.RemoveAt(twoSideQueue.Count - 1);
+        }
+    }
+
+    class SolutionNK
     {
         public List<List<int>> FindPath(TreeNode root, int expectNumber)
         {

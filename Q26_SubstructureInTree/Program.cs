@@ -24,7 +24,17 @@ namespace Q26_SubstructureInTree
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public bool IsSubStructure(TreeNode A, TreeNode B)
+        {
+            SolutionNK snk = new SolutionNK();
+
+            return snk.HasSubtree(A, B);
+        }
+    }
+
+    class SolutionNK
     {
         public bool HasSubtree(TreeNode pRoot1, TreeNode pRoot2)
         {

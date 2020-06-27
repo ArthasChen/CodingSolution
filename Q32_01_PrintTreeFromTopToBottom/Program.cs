@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,7 @@ namespace Q32_01_PrintTreeFromTopToBottom
             //node3.left = node6;
             //node3.right = node7;
 
-            Solution s = new Solution();
+            SolutionNK s = new SolutionNK();
             var head = s.PrintFromTopToBottom(node1);
 
             Console.ReadKey();
@@ -44,7 +45,16 @@ namespace Q32_01_PrintTreeFromTopToBottom
         }
     }
 
-    class Solution
+    public class Solution
+    {
+       public int[] LevelOrder(TreeNode root)
+       {
+           SolutionNK snk = new SolutionNK();
+           return snk.PrintFromTopToBottom(root).ToArray();
+       }
+    }
+
+    class SolutionNK
     {
         public List<int> PrintFromTopToBottom(TreeNode root)
         {

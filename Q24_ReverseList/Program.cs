@@ -48,7 +48,38 @@ namespace Q24_ReverseList
             val = x;
         }
     }
-    class Solution
+
+    public class Solution
+    {
+        public ListNode ReverseList(ListNode head)
+        {
+            // write code here
+            ListNode preNode = null;
+            ListNode node = head;
+            ListNode nextNode = null;
+
+            while (node != null)
+            {
+                nextNode = node.next;
+
+                //if (nextNode!=null)
+                //{
+                node.next = preNode;
+                preNode = node;
+                node = nextNode;
+                //}
+                //else
+                //{
+                //    node.next = preNode;
+                //    node = nextNode;
+                //}
+            }
+
+            return preNode;
+        }
+    }
+
+    class SolutionNK
     {
         public ListNode ReverseList(ListNode pHead)
         {

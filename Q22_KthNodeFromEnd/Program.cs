@@ -22,7 +22,7 @@ namespace QQ22_KthNodeFromEnd
             n4.next = n5;
             n5.next = null;
 
-            Solution s = new Solution();
+            SolutionNK s = new SolutionNK();
             var ssFindKthToTailout = s.FindKthToTail(n1, 1);
             Console.WriteLine(ssFindKthToTailout.val.ToString());
             Console.ReadKey();
@@ -39,7 +39,49 @@ namespace QQ22_KthNodeFromEnd
         }
     }
 
-    class Solution
+    public class Solution
+    {
+        public ListNode GetKthFromEnd(ListNode head, int k)
+        {
+            if (head == null)
+            {
+                return head;
+            }
+
+            if (k - 1 < 0)
+            {
+                return null;
+            }
+            // write code here
+            int count = 0;
+            ListNode p1 = head;
+            ListNode p2 = head;
+
+            while (count < k - 1)
+            {
+                if (p1.next != null)
+                {
+                    p1 = p1.next;
+                    count++;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+
+            while (p1.next != null)
+            {
+                p1 = p1.next;
+                p2 = p2.next;
+            }
+
+            return p2;
+        }
+    }
+
+    class SolutionNK
     {
         public ListNode FindKthToTail(ListNode head, int k)
         {

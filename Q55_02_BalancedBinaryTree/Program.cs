@@ -36,7 +36,41 @@ namespace Q55_02_BalancedBinaryTree
             }
         }
 
-        class Solution
+        public class Solution
+        {
+            public bool IsBalanced(TreeNode root)
+            {
+                return DetermineIsBalanced(root).isBalance;
+            }
+
+            public static ReturnType DetermineIsBalanced(TreeNode pRoot)
+            {
+                // write code here
+                if (pRoot == null)
+                {
+                    return new ReturnType(true, 0);
+                }
+
+
+
+                ReturnType leftReturnType = DetermineIsBalanced(pRoot.left);
+                ReturnType rightReturnType = DetermineIsBalanced(pRoot.right);
+
+                if (leftReturnType.isBalance && rightReturnType.isBalance)
+                {
+                    if (Math.Abs(leftReturnType.treeDepth - rightReturnType.treeDepth) <= 1)
+                    {
+                        int returnDepth = Math.Max(leftReturnType.treeDepth, rightReturnType.treeDepth) + 1;
+                        return new ReturnType(true, returnDepth);
+                    }
+                }
+                int returnDepth1 = Math.Max(leftReturnType.treeDepth, rightReturnType.treeDepth) + 1;
+
+                return new ReturnType(false, returnDepth1);
+            }
+        }
+
+        class SolutionNK
         {
             public bool IsBalanced_Solution(TreeNode pRoot)
             {
@@ -67,7 +101,7 @@ namespace Q55_02_BalancedBinaryTree
                 }
                 int returnDepth1 = Math.Max(leftReturnType.treeDepth, rightReturnType.treeDepth) + 1;
 
-                return new ReturnType(false,returnDepth1);
+                return new ReturnType(false, returnDepth1);
             }
         }
     }

@@ -17,22 +17,39 @@ namespace ReplaceSpace
         }
     }
 
-    class Solution
+    public class Solution
     {
-        public string replaceSpace(string str)
+        public string ReplaceSpace(string s)
         {
             // write code here
             string output = null;
-            string[] strArray = str.Split(' ');
+            string[] strArray = s.Split(' ');
             //for (int i = 0; i < strArray.Length; i++)
             //{
             //    output += strArray[i];
             //}
-            output = str.Replace(" ", "%20");
+            output = s.Replace(" ", "%20");
 
             return output;
         }
     }
+
+    //class Solution
+    //{
+    //    public string replaceSpace(string str)
+    //    {
+    //        // write code here
+    //        string output = null;
+    //        string[] strArray = str.Split(' ');
+    //        //for (int i = 0; i < strArray.Length; i++)
+    //        //{
+    //        //    output += strArray[i];
+    //        //}
+    //        output = str.Replace(" ", "%20");
+
+    //        return output;
+    //    }
+    //}
 
     class Solution2
     {
