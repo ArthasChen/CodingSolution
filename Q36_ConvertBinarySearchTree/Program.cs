@@ -30,6 +30,21 @@ namespace Q36_ConvertBinarySearchTree
             Solution2 s = new Solution2();
             var head = s.Convert(node1);
 
+            
+            Node n1=new Node(4,null,null);
+            Node n2=new Node(2,null,null);
+            Node n3=new Node(5,null,null);
+            Node n4=new Node(1,null,null);
+            Node n5=new Node(3,null,null);
+
+            n1.left = n2;
+            n1.right = n3;
+            n2.left = n4;
+            n2.right = n5;
+            Solution3 sss =new Solution3();
+
+            var head1 = sss.TreeToDoublyList(n1);
+
             Console.ReadKey();
         }
     }
@@ -210,7 +225,12 @@ namespace Q36_ConvertBinarySearchTree
                 return null;
             }
 
-            return BinaryConverToList(root).headNode;
+            ReturnTy re = BinaryConverToList(root);
+            Node head = re.headNode;
+            Node tail = re.tailNode;
+            head.left = tail;
+            tail.right = head;
+            return head;
         }
 
         public ReturnTy BinaryConverToList(Node root)
