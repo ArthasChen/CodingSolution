@@ -86,6 +86,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q09_QueueWithTwoStacks", "Q
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q04_FindInPartiallySortedMatrix", "Q04_FindInPartiallySortedMatrix\Q04_FindInPartiallySortedMatrix.csproj", "{0EA2AAEC-1548-4C44-A9B3-DFF9EDA72DCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q31_StackPushPopOrder", "Q31_StackPushPopOrder\Q31_StackPushPopOrder.csproj", "{11563C81-005A-4694-8154-F67AC26D1B11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q40_KLeastNumbers", "Q40_KLeastNumbers\Q40_KLeastNumbers.csproj", "{16BB210E-0E95-405C-A204-E9836BC82713}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -248,6 +252,14 @@ Global
 		{0EA2AAEC-1548-4C44-A9B3-DFF9EDA72DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EA2AAEC-1548-4C44-A9B3-DFF9EDA72DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EA2AAEC-1548-4C44-A9B3-DFF9EDA72DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11563C81-005A-4694-8154-F67AC26D1B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11563C81-005A-4694-8154-F67AC26D1B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11563C81-005A-4694-8154-F67AC26D1B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11563C81-005A-4694-8154-F67AC26D1B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BB210E-0E95-405C-A204-E9836BC82713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BB210E-0E95-405C-A204-E9836BC82713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BB210E-0E95-405C-A204-E9836BC82713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BB210E-0E95-405C-A204-E9836BC82713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
