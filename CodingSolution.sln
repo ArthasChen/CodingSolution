@@ -92,6 +92,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q40_KLeastNumbers", "Q40_KL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q12_StringPathInMatrix", "Q12_StringPathInMatrix\Q12_StringPathInMatrix.csproj", "{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q13_RobotMove", "Q13_RobotMove\Q13_RobotMove.csproj", "{9E5CAA50-FC8D-4A24-A71F-D7FE69D10411}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q18_01_DeleteNodeInList", "Q18_01_DeleteNodeInList\Q18_01_DeleteNodeInList.csproj", "{CB495719-B9AD-4B8B-80EF-1EAD86DF3CD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -266,6 +270,14 @@ Global
 		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E5CAA50-FC8D-4A24-A71F-D7FE69D10411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E5CAA50-FC8D-4A24-A71F-D7FE69D10411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E5CAA50-FC8D-4A24-A71F-D7FE69D10411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E5CAA50-FC8D-4A24-A71F-D7FE69D10411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB495719-B9AD-4B8B-80EF-1EAD86DF3CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB495719-B9AD-4B8B-80EF-1EAD86DF3CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB495719-B9AD-4B8B-80EF-1EAD86DF3CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB495719-B9AD-4B8B-80EF-1EAD86DF3CD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
