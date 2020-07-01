@@ -90,6 +90,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q31_StackPushPopOrder", "Q3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q40_KLeastNumbers", "Q40_KLeastNumbers\Q40_KLeastNumbers.csproj", "{16BB210E-0E95-405C-A204-E9836BC82713}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q12_StringPathInMatrix", "Q12_StringPathInMatrix\Q12_StringPathInMatrix.csproj", "{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -260,6 +262,10 @@ Global
 		{16BB210E-0E95-405C-A204-E9836BC82713}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16BB210E-0E95-405C-A204-E9836BC82713}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16BB210E-0E95-405C-A204-E9836BC82713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3F50B82-58E6-4DB7-A0F1-3E290C92E533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
