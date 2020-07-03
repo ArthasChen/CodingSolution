@@ -150,4 +150,22 @@ namespace Q35_CopyComplexList
             return copyNodeHead;
         }
     }
+
+    /// <summary>
+    /// 解法二：
+    /// </summary>
+    public class Solution2
+    {
+        public Node CopyRandomList(Node head)
+        {
+            if (head == null)
+            {
+                return null;
+            }
+
+            return null;
+        }
+
+        
+    }
 }
