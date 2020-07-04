@@ -118,4 +118,47 @@ namespace Q18_01_DeleteNodeInList
             return resuleHeadNode;
         }
     }
+
+    /// <summary>
+    /// 剑指offer的原题
+    /// 题目是给定单向链表的头指针和一个节点指针，定义一个函数，需要在O(1)的时间内删除该节点。
+    /// 这题的重点在于时间要求，需要在O(1)的时间实现删除节点。因此不能采用从头遍历的思路。应该把待删除节点的下一个节点的值复制到待删除节点，然后把next指向下一个节点的next。
+    /// 有三种情况：1.待删除节点位于链表中间。2.待删除节点位于链表尾部。3.链表只有1个节点，待删除节点就是这个节点。
+    /// 还有一些条件需要考虑，就是待删除的节点必须包含在头节点指向的链表当中，这个需要在参数传入之前确认。
+    /// </summary>
+    public class SolutionJZOffer
+    {
+        public ListNode DeleteNode(ListNode head, ListNode toBeDeletedNode)
+        {
+            if (head == null)
+            {
+                return null;
+            }
+
+            // 1.待删除节点位于链表中间。
+            if (toBeDeletedNode.next != null)
+            {
+                toBeDeletedNode.val = toBeDeletedNode.next.val;
+                toBeDeletedNode.next = toBeDeletedNode.next.next;
+            }
+            // 3.链表只有1个节点，待删除节点就是这个节点
+            else if (toBeDeletedNode.next == null && head.next == null)
+            {
+                head = null;
+            }
+            // 2.待删除节点位于链表尾部。
+            else
+            {
+                ListNode curNode = head;
+                while (curNode.next != toBeDeletedNode)
+                {
+                    curNode = curNode.next;
+                }
+
+                curNode.next = null;
+            }
+
+            return head;
+        }
+    }
 }
