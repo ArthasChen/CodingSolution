@@ -124,6 +124,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q59_02_QueueWithMax", "Q59_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q56_01_NumbersAppearOnce", "Q56_01_NumbersAppearOnce\Q56_01_NumbersAppearOnce.csproj", "{3C672011-706D-4D57-A8FB-69B0DA75AA87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q56_02_NumberAppearingOnce", "Q56_02_NumberAppearingOnce\Q56_02_NumberAppearingOnce.csproj", "{8B83EFDB-B12B-4A0A-BE0B-E8808CC260FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -362,6 +364,10 @@ Global
 		{3C672011-706D-4D57-A8FB-69B0DA75AA87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C672011-706D-4D57-A8FB-69B0DA75AA87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C672011-706D-4D57-A8FB-69B0DA75AA87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B83EFDB-B12B-4A0A-BE0B-E8808CC260FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B83EFDB-B12B-4A0A-BE0B-E8808CC260FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B83EFDB-B12B-4A0A-BE0B-E8808CC260FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B83EFDB-B12B-4A0A-BE0B-E8808CC260FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
