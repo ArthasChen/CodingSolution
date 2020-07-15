@@ -130,6 +130,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q41_StreamMedian", "Q41_Str
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q49_UglyNumber", "Q49_UglyNumber\Q49_UglyNumber.csproj", "{5B6771A7-D398-4A3D-956D-E54CB9EA9D19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q65_AddTwoNumbers", "Q65_AddTwoNumbers\Q65_AddTwoNumbers.csproj", "{1BCAE9A7-C09D-466E-A747-B1B994FBDF0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -380,6 +382,10 @@ Global
 		{5B6771A7-D398-4A3D-956D-E54CB9EA9D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B6771A7-D398-4A3D-956D-E54CB9EA9D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B6771A7-D398-4A3D-956D-E54CB9EA9D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCAE9A7-C09D-466E-A747-B1B994FBDF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCAE9A7-C09D-466E-A747-B1B994FBDF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCAE9A7-C09D-466E-A747-B1B994FBDF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCAE9A7-C09D-466E-A747-B1B994FBDF0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
