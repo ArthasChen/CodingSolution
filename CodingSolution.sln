@@ -138,6 +138,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q46_TranslateNumbersToStrin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q14_01_CuttingRope1", "Q14_01_CuttingRope1\Q14_01_CuttingRope1.csproj", "{70FB46E1-ABCF-4445-8362-CB613F6CE767}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q14_02_CuttingRope2", "Q14_02_CuttingRope2\Q14_02_CuttingRope2.csproj", "{DE8C7327-D28B-4770-9114-D7EC80786A0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -404,6 +406,10 @@ Global
 		{70FB46E1-ABCF-4445-8362-CB613F6CE767}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70FB46E1-ABCF-4445-8362-CB613F6CE767}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70FB46E1-ABCF-4445-8362-CB613F6CE767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8C7327-D28B-4770-9114-D7EC80786A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8C7327-D28B-4770-9114-D7EC80786A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8C7327-D28B-4770-9114-D7EC80786A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8C7327-D28B-4770-9114-D7EC80786A0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
