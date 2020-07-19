@@ -26,7 +26,6 @@ namespace Q14_01_CuttingRope1
     /// </summary>
     public class Solution
     {
-
         public int CuttingRope(int n)
         {
             int[] dp = new int[n + 1];
@@ -47,15 +46,15 @@ namespace Q14_01_CuttingRope1
 
             dp[0] = 0;
             dp[1] = 1;
-            dp[2] = 2;// dp[2]可以分解成1和1，理论上dp[2] = 1*1 =1，但是乘积没有“不剪”大，因此这里直接给定dp[2]=2。
-            dp[3] = 3;// dp[3]可以分解成1和2，理论上dp[3] = 1*2 =2，但是乘积没有”不剪“大，因此这里直接给定dp[3]=3。
-                      // 如果这里完全按照定义来，即dp[n]表示长度为n的绳子被剪后乘积的最大值，则在比较乘积最大值的时候多判断一步跟n直接对比，即n一刀都不剪。
+            dp[2] = 2; // dp[2]可以分解成1和1，理论上dp[2] = 1*1 =1，但是乘积没有“不剪”大，因此这里直接给定dp[2]=2。
+            dp[3] = 3; // dp[3]可以分解成1和2，理论上dp[3] = 1*2 =2，但是乘积没有”不剪“大，因此这里直接给定dp[3]=3。
+            // 如果这里完全按照定义来，即dp[n]表示长度为n的绳子被剪后乘积的最大值，则在比较乘积最大值的时候多判断一步跟n直接对比，即n一刀都不剪。
 
             for (int i = 4; i < n + 1; i++)
             {
                 int max = 0;
 
-                for (int j = 1; j <= i / 2; j++)// 可以写j<i但是多余计算
+                for (int j = 1; j <= i / 2; j++) // 可以写j<i但是多余计算
                 {
                     int products = dp[j] * dp[i - j];
                     if (products > max)
@@ -68,6 +67,7 @@ namespace Q14_01_CuttingRope1
             }
 
             #region 下面的代码为需要判断n是否继续分解的思路
+
             //dp[0] = 0;
             //dp[1] = 0;
             //dp[2] = 1;
@@ -85,9 +85,45 @@ namespace Q14_01_CuttingRope1
 
             //    dp[i] = max;
             //}
+
             #endregion
 
             return dp[n];
+        }
+    }
+
+    /// <summary>
+    /// 解法二：贪心算法
+    /// 时间复杂度：O(1)
+    /// 空间复杂度：O(1)
+    /// </summary>
+    public class Solution2
+    {
+        public int CuttingRope(int n)
+        {
+            if (n == 2)
+            {
+                return 1;
+            }
+
+            if (n == 3)
+            {
+                return 2;
+            }
+
+            int mod = (int)1e9 + 7;
+
+            int countsOf3 = n / 3;
+            if (n - 3 * countsOf3 == 1)
+            {
+                countsOf3--;
+            }
+
+            int countsOf2 = (n - 3 * countsOf3) / 2;
+
+            int result = (int)Math.Pow(3,countsOf3)*(int)Math.Pow(2,countsOf2);
+
+            return result;
         }
     }
 }
