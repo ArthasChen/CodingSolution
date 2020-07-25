@@ -156,6 +156,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q47_MaxValueOfGifts", "Q47_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q44_DigitsInSequence", "Q44_DigitsInSequence\Q44_DigitsInSequence.csproj", "{9009984A-7EFD-46C3-A300-A3139A75200A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q51_InversePairs", "Q51_InversePairs\Q51_InversePairs.csproj", "{6FD8EB43-A875-4201-9A97-17D4D0417FBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -458,6 +460,10 @@ Global
 		{9009984A-7EFD-46C3-A300-A3139A75200A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9009984A-7EFD-46C3-A300-A3139A75200A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9009984A-7EFD-46C3-A300-A3139A75200A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
