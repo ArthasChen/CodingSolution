@@ -158,6 +158,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q44_DigitsInSequence", "Q44
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q51_InversePairs", "Q51_InversePairs\Q51_InversePairs.csproj", "{6FD8EB43-A875-4201-9A97-17D4D0417FBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q48_LongestSubstringWithoutDup", "Q48_LongestSubstringWithoutDup\Q48_LongestSubstringWithoutDup.csproj", "{402BC7B5-F24D-4F0A-83AF-8C21DB05934D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -464,6 +466,10 @@ Global
 		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FD8EB43-A875-4201-9A97-17D4D0417FBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402BC7B5-F24D-4F0A-83AF-8C21DB05934D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402BC7B5-F24D-4F0A-83AF-8C21DB05934D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402BC7B5-F24D-4F0A-83AF-8C21DB05934D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402BC7B5-F24D-4F0A-83AF-8C21DB05934D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
