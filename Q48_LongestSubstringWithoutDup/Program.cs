@@ -21,7 +21,7 @@ namespace Q48_LongestSubstringWithoutDup
 
     /// <summary>
     /// 时间复杂度：O(n)
-    /// 空间复杂度：O(n)
+    /// 空间复杂度：O(1) 因为保存的是字符，字符的 ASCII 码范围为 0 ~ 127 ，哈希表 dic 最多使用 O(128) = O(1) 大小的额外空间。
     /// </summary>
     public class Solution
     {
