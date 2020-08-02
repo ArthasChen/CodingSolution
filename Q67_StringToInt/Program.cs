@@ -13,12 +13,14 @@ namespace Q67_StringToInt
             Solution s = new Solution();
             s.StrToInt("   12  ");
 
-            bool re = s.BeyondMaxOrMin("+2147483648");
+            //MaxValue = 2147483647;
+            //MinValue = -2147483648;
+            //bool re = s.BeyondMaxOrMin("-2147483649");
             //string av = "0012300";
             //var q = av.Trim('0');
             //string aaa = int.MinValue.ToString();
             //string faaa = int.MaxValue.ToString();
-            var b = s.StrToInt("11111111111111");
+            var b = s.StrToInt(" ");
 
             Console.ReadKey();
         }
@@ -34,14 +36,18 @@ namespace Q67_StringToInt
                 return 0;
             }
 
-            // string trim
+            // 处理字符串前后的空格
             string strTrim = str.Trim();
+            if (strTrim.Length == 0)
+            {
+                return 0;
+            }
 
             int lastNumberIndex = 0;
 
             // 第一个非空格为字符（非正负号或者数字） 无法转换
             if (strTrim[lastNumberIndex] != '-' && strTrim[lastNumberIndex] != '+' &&
-                strTrim[lastNumberIndex] - 'a' >= 0 && strTrim[lastNumberIndex] - 'a' <= 26)
+                strTrim[lastNumberIndex] - '0' <= 0 && strTrim[lastNumberIndex] - '9' >= 0)
             {
                 return 0;
             }
@@ -63,18 +69,25 @@ namespace Q67_StringToInt
                     break;
                 }
 
-                // TODO:判断无符号整数是否越界
+                // 判断是否为0
+
+                if (IsZero(strTrim.Substring(0, lastNumberIndex)))
+                {
+                    // 等于0 
+                    return 0;
+                }
+
+                // 判断无符号整数是否越界,实际上是int存储，默认是正数。只是没有+号而已，因此范围是[ 0 , 2^31-1 ]
                 if (BeyondMaxOrMin(strTrim.Substring(0, lastNumberIndex)))
                 {
-                    return 0;
+                    // 越界了 , 或者等于0，直接返回0
+                    return int.MaxValue;
                 }
                 else
                 {
-                    // todo:字符串转整数
+                    // 在int正数的范围内，字符串转整数
                     return StringToInt(strTrim.Substring(0, lastNumberIndex));
                 }
-
-                return 0;
             }
 
             // 第一个非空格为正负号 并且后面为数字
@@ -103,25 +116,38 @@ namespace Q67_StringToInt
                 }
                 else
                 {
-                    // TODO: 判断带符号的整数是否越界
+                    string tem2 = strTrim.Substring(1);
+                    // 是否等于0
+                    if (IsZero(tem2))
+                    {
+                        // 等于0 
+                        return 0;
+                    }
+
+
+                    // 判断带符号的整数是否越界
                     if (BeyondMaxOrMin(strTrim.Substring(0, lastNumberIndex)))
                     {
-                        return 0;
+                        // 越界了 , 按照正负返回
+                        if (strTrim[0] == '+')
+                        {
+                            return int.MaxValue;
+                        }
+                        else
+                        {
+                            return int.MinValue;
+                        }
+
                     }
                     else
                     {
+                        // 没有越界，返回正确的字符串
                         return StringToInt(strTrim.Substring(0, lastNumberIndex));
                     }
-
-                    return 0;
                 }
             }
 
-
-            // 当可以转换为数字时候，判断是否超过大小
-
-
-            return -1;
+            return 0;
         }
 
         public int StringToInt(string substring)
@@ -167,63 +193,39 @@ namespace Q67_StringToInt
             // 有符号
             if (str[0] == '+' || str[0] == '-')
             {
+                // 去掉正负号
                 string tem = str.Substring(1);
 
-                if (IsZero(tem))
-                {
-                    // 等于0 
-                    return false;
-                }
+                //if (IsZero(tem))
+                //{
+                //    // 等于0 
+                //    return true;
+                //}
 
-                tem = tem.Trim('0');
+                // 去掉高位的0
+                tem = tem.TrimStart('0');
 
                 if (str[0] == '+')
                 {
-                    StringBuilder temSB = new StringBuilder(int.MaxValue.ToString());
-                    while (temSB.Length < tem.Length)
-                    {
-                        temSB.Insert(0, '0');
-                    }
+                    // 判断是否大于最大值
+                    //StringBuilder temSB = new StringBuilder(int.MaxValue.ToString());
+                    //while (temSB.Length < tem.Length)
+                    //{
+                    //    temSB.Insert(0, '0');
+                    //}
 
-                    string strMaxValue = temSB.ToString();
+                    string strMaxValue = int.MaxValue.ToString();
 
-                    if (tem.CompareTo(strMaxValue) > 0)
-                    {
-                        return true;
-                    }
-                    else
+                    if (tem.Length < strMaxValue.Length)
                     {
                         return false;
                     }
-                }
-
-                if (str[0] == '-')
-                {
-                    string minStr = int.MinValue.ToString();
-                    minStr = minStr.Substring(1);
-
-                    StringBuilder temSB = new StringBuilder(minStr);
-                    while (temSB.Length < tem.Length)
-                    {
-                        temSB.Insert(0, '0');
-                    }
-
-                    string strMinValue = temSB.ToString();
-
-                    if (tem.CompareTo(strMinValue) > 0)
+                    else if (tem.Length > strMaxValue.Length)
                     {
                         return true;
                     }
                     else
                     {
-                        StringBuilder tem1SB = new StringBuilder(uint.MaxValue.ToString());
-                        while (tem1SB.Length < tem.Length)
-                        {
-                            tem1SB.Insert(0, '0');
-                        }
-
-                        string strMaxValue = tem1SB.ToString();
-
                         if (tem.CompareTo(strMaxValue) > 0)
                         {
                             return true;
@@ -235,21 +237,106 @@ namespace Q67_StringToInt
                     }
                 }
 
+                if (str[0] == '-')
+                {
+                    // 判断是否小于最小值
+
+                    string strMaxValue = "2147483648";
+
+                    if (tem.Length < strMaxValue.Length)
+                    {
+                        return false;
+                    }
+                    else if (tem.Length > strMaxValue.Length)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        if (tem.CompareTo(strMaxValue) > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+
+
+
+                    //string minStr = int.MinValue.ToString();
+                    //minStr = minStr.Substring(1);
+
+                    //StringBuilder temSB = new StringBuilder(minStr);
+                    //while (temSB.Length < tem.Length)
+                    //{
+                    //    temSB.Insert(0, '0');
+                    //}
+
+                    //string strMinValue = temSB.ToString();
+
+                    //if (tem.CompareTo(strMinValue) > 0)
+                    //{
+                    //    return true;
+                    //}
+                    //else
+                    //{
+                    //    StringBuilder tem1SB = new StringBuilder(uint.MaxValue.ToString());
+                    //    while (tem1SB.Length < tem.Length)
+                    //    {
+                    //        tem1SB.Insert(0, '0');
+                    //    }
+
+                    //    string strMaxValue = tem1SB.ToString();
+
+                    //    if (tem.CompareTo(strMaxValue) > 0)
+                    //    {
+                    //        return true;
+                    //    }
+                    //    else
+                    //    {
+                    //        return false;
+                    //    }
+                    //}
+                }
+
                 return true;
             }
             // 无符号
             else
             {
-                if (IsZero(str))
+                //if (IsZero(str))
+                //{
+                //    // 等于0 
+                //    return true;
+                //}
+
+                // 去掉高位的0
+                string tem = str.TrimStart('0');
+
+                string strMaxValue = int.MaxValue.ToString();
+
+                if (tem.Length < strMaxValue.Length)
                 {
-                    // 等于0 
+                    return false;
+                }
+                else if (tem.Length > strMaxValue.Length)
+                {
                     return true;
                 }
                 else
                 {
-
-                    return false;
+                    if (tem.CompareTo(strMaxValue) > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
+
             }
         }
 
@@ -271,6 +358,14 @@ namespace Q67_StringToInt
             {
                 return false;
             }
+        }
+    }
+
+    public class Solution2
+    {
+        public int StrToInt(string str)
+        {
+
         }
     }
 }
