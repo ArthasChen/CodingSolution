@@ -164,6 +164,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q45_SortArrayForMinNumber",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q67_StringToInt", "Q67_StringToInt\Q67_StringToInt.csproj", "{4FB68867-33A8-4303-90A1-6F9AD145A709}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q68_01_CommonParentInBinarySearchTree", "Q68_01_CommonParentInBinarySearchTree\Q68_01_CommonParentInBinarySearchTree.csproj", "{EE4424DE-1A8A-4798-83A5-8432C942B74A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -482,6 +484,10 @@ Global
 		{4FB68867-33A8-4303-90A1-6F9AD145A709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB68867-33A8-4303-90A1-6F9AD145A709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB68867-33A8-4303-90A1-6F9AD145A709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4424DE-1A8A-4798-83A5-8432C942B74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4424DE-1A8A-4798-83A5-8432C942B74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4424DE-1A8A-4798-83A5-8432C942B74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4424DE-1A8A-4798-83A5-8432C942B74A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
